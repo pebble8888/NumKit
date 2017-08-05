@@ -10,6 +10,7 @@
 		A2774B081F35E3FC00EBE00E /* NumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2774AFE1F35E3FC00EBE00E /* NumKit.framework */; };
 		A2774B0D1F35E3FC00EBE00E /* NumKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2774B0C1F35E3FC00EBE00E /* NumKitTests.swift */; };
 		A2774B0F1F35E3FC00EBE00E /* NumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2774B011F35E3FC00EBE00E /* NumKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2774B191F35E41C00EBE00E /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2774B181F35E41C00EBE00E /* Mod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		A2774B071F35E3FC00EBE00E /* NumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2774B0C1F35E3FC00EBE00E /* NumKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumKitTests.swift; sourceTree = "<group>"; };
 		A2774B0E1F35E3FC00EBE00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2774B181F35E41C00EBE00E /* Mod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				A2774B011F35E3FC00EBE00E /* NumKit.h */,
 				A2774B021F35E3FC00EBE00E /* Info.plist */,
+				A2774B181F35E41C00EBE00E /* Mod.swift */,
 			);
 			path = NumKit;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					A2774AFD1F35E3FC00EBE00E = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A2774B061F35E3FC00EBE00E = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2774B191F35E41C00EBE00E /* Mod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		A2774B131F35E3FC00EBE00E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pebble8888.NumKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,6 +347,7 @@
 		A2774B141F35E3FC00EBE00E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -358,6 +366,7 @@
 		A2774B161F35E3FC00EBE00E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = NumKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pebble8888.NumKitTests;
@@ -369,6 +378,7 @@
 		A2774B171F35E3FC00EBE00E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = NumKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pebble8888.NumKitTests;
