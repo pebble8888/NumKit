@@ -12,6 +12,24 @@ func isOdd(_ a:Int) -> Bool {
     return (a % 2) == 1
 }
 
+func isEven(_ a:Int) -> Bool {
+    return !isEven(a)
+}
+
+func isPrime(_ a:Int) -> Bool {
+    if a == 2 { return false }
+    if a < 2 || isEven(a) { return false }
+    var i = 3
+    let l:Int = Int(floor(sqrt(Double(a))))
+    while i <= l {
+        if a % i == 0 {
+            return false
+        }
+        i = i.advanced(by: 2)
+    }
+    return true
+}
+
 func expmod(_ b:Int, _ e:Int, _ p:Int) -> Int {
     if e == 0 { return 1 }
     let s = expmod(b, e/2, p)
