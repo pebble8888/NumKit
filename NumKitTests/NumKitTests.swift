@@ -20,10 +20,11 @@ class NumKitTests: XCTestCase {
     }
     
     func testExample() {
-        XCTAssertEqual(isOdd(-1), true)
         XCTAssertEqual(isOdd(0), false)
         XCTAssertEqual(isOdd(1), true)
         XCTAssertEqual(isOdd(2), false)
+        
+        XCTAssertEqual(gcd(16,24), 8)
     }
     
     func testPerformanceExample() {

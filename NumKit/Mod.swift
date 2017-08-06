@@ -8,19 +8,19 @@
 
 import Foundation
 
-func isOdd(_ a:Int) -> Bool {
+func isOdd(_ a:UInt) -> Bool {
     return (a % 2) == 1
 }
 
-func isEven(_ a:Int) -> Bool {
+func isEven(_ a:UInt) -> Bool {
     return !isEven(a)
 }
 
-func isPrime(_ a:Int) -> Bool {
+func isPrime(_ a:UInt) -> Bool {
     if a == 2 { return false }
     if a < 2 || isEven(a) { return false }
-    var i = 3
-    let l:Int = Int(floor(sqrt(Double(a))))
+    var i:UInt = 3
+    let l:UInt = UInt(floor(sqrt(Double(a))))
     while i <= l {
         if a % i == 0 {
             return false
@@ -30,7 +30,7 @@ func isPrime(_ a:Int) -> Bool {
     return true
 }
 
-func expmod(_ b:Int, _ e:Int, _ p:Int) -> Int {
+func expmod(_ b:UInt, _ e:UInt, _ p:UInt) -> UInt {
     if e == 0 { return 1 }
     let s = expmod(b, e/2, p)
     // 2乗する
@@ -42,11 +42,12 @@ func expmod(_ b:Int, _ e:Int, _ p:Int) -> Int {
     }
 }
 
-func inversemod(_ b:Int, _ p:Int) -> Int {
+func inversemod(_ b:UInt, _ p:UInt) -> UInt {
+    assert(isPrime(p))
     return expmod(b, p-2, p)
 }
 
-func quadraticResidue(_ a:Int, _ p:Int) -> Int {
+func quadraticResidue(_ a:UInt, _ p:UInt) -> UInt {
     assert(p % 8 == 5)
     let x = expmod(a, (p+3)/8, p)
     if (x * x - a) % p == 0 {
@@ -54,4 +55,14 @@ func quadraticResidue(_ a:Int, _ p:Int) -> Int {
     }
     let t = expmod(2, (p-1)/4, p)
     return t * x
+}
+
+func gcd(_ a:UInt, _ b:UInt) -> UInt {
+    if a < b {
+        return gcd(b, a)
+    }
+    if b == 0 {
+        return a
+    }
+    return gcd(b, a % b)
 }
