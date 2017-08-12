@@ -44,6 +44,15 @@ class NumKitTests: XCTestCase {
         }
     }
     
+    func testMersenne() {
+        for n in 1...UInt(63) {
+            let v = Mersenne(n)
+            if isPrime(v){
+                print("\(n) \(v)")
+            }
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

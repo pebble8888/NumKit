@@ -64,3 +64,11 @@ func gcd(_ a:UInt, _ b:UInt) -> UInt {
     }
     return gcd(b, a % b)
 }
+
+func pow2(_ n:UInt) -> UInt {
+    return 1 << n
+}
+
+func Mersenne(_ n:UInt) -> UInt {
+    return pow2(n) - 1
+}
