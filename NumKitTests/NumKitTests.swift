@@ -27,6 +27,23 @@ class NumKitTests: XCTestCase {
         XCTAssertEqual(gcd(16,24), 8)
     }
     
+    // first 500 prime
+    func testPrime() {
+        var n:UInt = 0
+        for i in 2...UInt.max {
+            if isPrime(UInt(i)) {
+                print("\(i) ", terminator:"")
+                n += 1
+                if n % 20 == 0 {
+                    print("")
+                    if n == 500 {
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

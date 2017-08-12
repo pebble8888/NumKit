@@ -8,21 +8,20 @@
 
 import Foundation
 
-func isOdd(_ a:UInt) -> Bool {
-    return (a % 2) == 1
+func isOdd(_ x:UInt) -> Bool {
+    return (x % 2) == 1
 }
 
-func isEven(_ a:UInt) -> Bool {
-    return !isEven(a)
+func isEven(_ x:UInt) -> Bool {
+    return !isOdd(x)
 }
 
-func isPrime(_ a:UInt) -> Bool {
-    if a == 2 { return false }
-    if a < 2 || isEven(a) { return false }
+func isPrime(_ x:UInt) -> Bool {
+    if x == 2 { return true }
+    if x < 2 || isEven(x) { return false }
     var i:UInt = 3
-    let l:UInt = UInt(floor(sqrt(Double(a))))
-    while i <= l {
-        if a % i == 0 {
+    while i * i <= x {
+        if x % i == 0 {
             return false
         }
         i = i.advanced(by: 2)
@@ -33,7 +32,6 @@ func isPrime(_ a:UInt) -> Bool {
 func expmod(_ b:UInt, _ e:UInt, _ p:UInt) -> UInt {
     if e == 0 { return 1 }
     let s = expmod(b, e/2, p)
-    // 2乗する
     let r = (s * s) % p
     if isOdd(e) {
         return (r * b) % p
