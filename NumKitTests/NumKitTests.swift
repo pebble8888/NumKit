@@ -25,6 +25,7 @@ class NumKitTests: XCTestCase {
         XCTAssertEqual(isOdd(2), false)
         
         XCTAssertEqual(gcd(16,24), 8)
+        XCTAssertEqual(lcm(18,24), 72)
     }
     
     // first 500 prime

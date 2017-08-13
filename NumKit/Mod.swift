@@ -65,6 +65,10 @@ func gcd(_ a:UInt, _ b:UInt) -> UInt {
     return gcd(b, a % b)
 }
 
+func lcm(_ a:UInt, _ b:UInt) -> UInt {
+    return a * b / gcd(a, b)
+}
+
 func pow2(_ n:UInt) -> UInt {
     return 1 << n
 }
