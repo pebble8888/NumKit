@@ -16,7 +16,9 @@ func isEven(_ x:UInt) -> Bool {
     return !isOdd(x)
 }
 
-func isPrime(_ x:UInt) -> Bool {
+// @note trial division 
+// consume very long time for x > 10 ^ 6
+func isPrimeTrialDivision(_ x:UInt) -> Bool {
     if x == 2 { return true }
     if x < 2 || isEven(x) { return false }
     var i:UInt = 3
@@ -41,7 +43,7 @@ func expmod(_ b:UInt, _ e:UInt, _ p:UInt) -> UInt {
 }
 
 func inversemod(_ b:UInt, _ p:UInt) -> UInt {
-    assert(isPrime(p))
+    assert(isPrimeTrialDivision(p))
     return expmod(b, p-2, p)
 }
 
